@@ -1,0 +1,27 @@
+Index: src/main/resources/db/migration/V5__create-table-usuarios.sql
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/db/migration/V5__create-table-usuarios.sql b/src/main/resources/db/migration/V5__create-table-usuarios.sql
+--- a/src/main/resources/db/migration/V5__create-table-usuarios.sql	
++++ b/src/main/resources/db/migration/V5__create-table-usuarios.sql	(date 1695930417968)
+@@ -1,14 +1,7 @@
+-CREATE TABLE medicos(
++CREATE TABLE usuarios(
+ id BIGINT NOT NULL AUTO_INCREMENT,
+-nombre VARCHAR(100) NOT NULL,
+-email VARCHAR(100) NOT NULL UNIQUE,
+-documento VARCHAR(6) NOT NULL UNIQUE,
+-especialidad VARCHAR(100) NOT NULL,
+-calle VARCHAR(100) NOT NULL,
+-distrito VARCHAR(100) NOT NULL,
+-complemento VARCHAR(100) NOT NULL,
+-numero VARCHAR(20),
+-ciudad VARCHAR(100) NOT NULL,
++login VARCHAR(100) NOT NULL,
++clave VARCHAR(100) NOT NULL,
+ 
+ PRIMARY KEY(id)
+ );
+\ No newline at end of file

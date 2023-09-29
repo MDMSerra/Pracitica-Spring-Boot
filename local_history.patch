@@ -1,0 +1,49 @@
+Index: src/main/resources/db/migration/V6__create-table-consultas.sql
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/db/migration/V6__create-table-consultas.sql b/src/main/resources/db/migration/V6__create-table-consultas.sql
+new file mode 100644
+--- /dev/null	(date 1695929991334)
++++ b/src/main/resources/db/migration/V6__create-table-consultas.sql	(date 1695929991334)
+@@ -0,0 +1,12 @@
++CREATE TABLE consultas(
++id BIGINT NOT NULL AUTO_INCREMENT,
++medico_id BIGINT NOT NULL,
++paciente_id BIGINT NOT NULL,
++data DATETIME NOT NULL,
++
++PRIMARY KEY(id),
++
++CONSTRAINT fk_consultas_medico_id FOREIGN KEY(medico_id) REFERENCES medicos(id),
++CONSTRAINT fk_consultas_paciente_id FOREIGN KEY(paciente_id) REFERENCES pacientes(id)
++
++);
+Index: src/main/resources/db/migration/V5__create-table-usuarios.sql
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/db/migration/V5__create-table-usuarios.sql b/src/main/resources/db/migration/V5__create-table-usuarios.sql
+--- a/src/main/resources/db/migration/V5__create-table-usuarios.sql	
++++ b/src/main/resources/db/migration/V5__create-table-usuarios.sql	(date 1695929532128)
+@@ -1,14 +1,7 @@
+-CREATE TABLE medicos(
++CREATE TABLE usuarios(
+ id BIGINT NOT NULL AUTO_INCREMENT,
+-nombre VARCHAR(100) NOT NULL,
+-email VARCHAR(100) NOT NULL UNIQUE,
+-documento VARCHAR(6) NOT NULL UNIQUE,
+-especialidad VARCHAR(100) NOT NULL,
+-calle VARCHAR(100) NOT NULL,
+-distrito VARCHAR(100) NOT NULL,
+-complemento VARCHAR(100) NOT NULL,
+-numero VARCHAR(20),
+-ciudad VARCHAR(100) NOT NULL,
++login VARCHAR(100) NOT NULL,
++clave VARCHAR(100) NOT NULL,
+ 
+ PRIMARY KEY(id)
+ );
+\ No newline at end of file
