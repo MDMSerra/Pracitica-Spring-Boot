@@ -9,7 +9,6 @@ import med.voll.api.domain.direccion.Direccion;
 
 @Getter
 @EqualsAndHashCode(of = "id")
-@NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "Paciente")
 @Table(name = "pacientes")

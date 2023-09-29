@@ -10,8 +10,8 @@ import med.voll.api.domain.paciente.Paciente;
 
 import java.time.LocalDateTime;
 
-@NoArgsConstructor
-@AllArgsConstructor
+
+
 @Getter
 @EqualsAndHashCode(of ="id")
 @Entity(name = "Consulta")

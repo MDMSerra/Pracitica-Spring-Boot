@@ -15,4 +15,6 @@ public interface PacienteRepository extends JpaRepository<Paciente,Long> {
 
     @Query("SELECT p FROM Paciente p WHERE p.activo = 0")
     List<Paciente> findPacientesFallecidos();
+
+    Boolean findActivoById( Long idPaciente);
 }
