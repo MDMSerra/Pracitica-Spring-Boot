@@ -11,8 +11,6 @@ import med.voll.api.domain.paciente.Paciente;
 import java.time.LocalDateTime;
 
 
-
-@Getter
 @EqualsAndHashCode(of ="id")
 @Entity(name = "Consulta")
 @Table(name = "consultas")
@@ -45,5 +43,21 @@ public class Consulta {
         this.paciente = paciente;
         this.medico = medico;
         this.fecha = fecha;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public LocalDateTime getFecha() {
+        return fecha;
     }
 }

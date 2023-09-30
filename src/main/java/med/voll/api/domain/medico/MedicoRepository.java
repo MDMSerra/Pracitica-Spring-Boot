@@ -26,4 +26,5 @@ public interface MedicoRepository extends JpaRepository<Medico,Long> {
             SELECT m.activo FROM Medico m WHERE m.id=:idMedico
             """)
     Boolean findActivoById(Long idMedico);
+
 }
