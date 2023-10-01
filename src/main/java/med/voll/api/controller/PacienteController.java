@@ -22,13 +22,13 @@ import java.util.List;
 @RequestMapping("/pacientes")
 @SecurityRequirement(name = "bearer-key")
 public class PacienteController {
-   /* @Autowired
+   @Autowired
     private PacienteRepository pacienteRepository;
     @PostMapping
     public ResponseEntity registrarPaciente(@RequestBody @Valid DatosRegistroPaciente datosRegistroPaciente, UriComponentsBuilder uriComponentsBuilder){
         Paciente paciente =  pacienteRepository.save(new Paciente(datosRegistroPaciente));
         DatosRespuestaPaciente datosRespuestaPaciente = new DatosRespuestaPaciente(
-                paciente.getId(), paciente.getNombre(), paciente.getDocumento(), paciente.getEmail(), paciente.getTelefono(),
+                paciente.getId(), paciente.getNombre(), paciente.getEmail(), paciente.getTelefono(), paciente.getDocumento(),
                 new DatosDireccion(paciente.getDireccion().getCalle(), paciente.getDireccion().getDistrito(), paciente.getDireccion().getCiudad(),
                         paciente.getDireccion().getNumero(), paciente.getDireccion().getComplemento())
         );
@@ -86,5 +86,5 @@ public class PacienteController {
         for (Paciente paciente : pacientesFallecidos) {
             paciente.setActivo(false);
         }
-    }*/
+    }
 }

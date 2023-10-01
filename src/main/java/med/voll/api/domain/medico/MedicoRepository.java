@@ -11,6 +11,7 @@ import java.util.List;
 public interface MedicoRepository extends JpaRepository<Medico,Long> {
     Page<Medico> findByActivoTrue(Pageable paginacion);
 
+    /*
     @Query("""
             SELECT m FROM Medico m WHERE m.activo = 1 AND m.especialidad=:especialidad AND
             m.id NOT IN(
@@ -18,6 +19,21 @@ public interface MedicoRepository extends JpaRepository<Medico,Long> {
             )
             ORDER BY RAND()
             LIMIT 1""")
+     */
+    @Query("""
+            select m from Medico m
+            where m.activo= 1 
+            and
+            m.especialidad=:especialidad 
+            and
+            m.id not in(  
+                select c.medico.id from Consulta c
+                where
+                c.fecha=:fecha
+            )
+            order by rand()
+            limit 1
+            """)
     Medico seleccionarMedicoConEspecialidadEnFecha(Especialidad especialidad, LocalDateTime fecha);
 
     List<Medico> findByNombre(String nombre);

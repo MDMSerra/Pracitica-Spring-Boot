@@ -2,7 +2,11 @@ package med.voll.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
 
+//@EntityScan(basePackages = "med.voll.api")
+//@ComponentScan({ "med.voll.api.*" })
 @SpringBootApplication
 public class ApiApplication {
 

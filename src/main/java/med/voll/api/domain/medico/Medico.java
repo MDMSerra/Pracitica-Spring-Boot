@@ -30,6 +30,13 @@ public class Medico {
 
     }
 
+    public Medico(String nombre, String email, String documento, Especialidad especialidad) {
+        this.nombre = nombre;
+        this.email = email;
+        this.documento = documento;
+        this.especialidad = especialidad;
+    }
+
     public Medico(DatosRegistroMedico datosRegistroMedico) {
         this.nombre = datosRegistroMedico.nombre();
         this.email = datosRegistroMedico.email();

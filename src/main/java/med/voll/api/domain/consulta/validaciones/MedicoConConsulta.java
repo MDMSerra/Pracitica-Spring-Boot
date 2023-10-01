@@ -11,7 +11,6 @@ public class MedicoConConsulta implements ValidadorDeConsultas{
     @Autowired
     private ConsultaRepository consultaRepository;
     public void validar(DatosAgendarConsulta datosAgendarConsulta){
-
         if(datosAgendarConsulta.idMedico()== null){
             return;
         }
@@ -21,8 +20,5 @@ public class MedicoConConsulta implements ValidadorDeConsultas{
        if(medicoConConsulta){
            throw new ValidationException("Este medico ya tiene una consulta en ese horario");
        }
-
-
-
     }
 }

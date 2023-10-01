@@ -5,7 +5,6 @@ import med.voll.api.domain.consulta.validaciones.ValidadorCancelamientoDeConsult
 import med.voll.api.domain.consulta.validaciones.ValidadorDeConsultas;
 import med.voll.api.domain.medico.Medico;
 import med.voll.api.domain.medico.MedicoRepository;
-import med.voll.api.domain.paciente.Paciente;
 import med.voll.api.domain.paciente.PacienteRepository;
 import med.voll.api.infra.errores.ValidacionDeIntegridad;
 import org.springframework.beans.factory.annotation.Autowired;

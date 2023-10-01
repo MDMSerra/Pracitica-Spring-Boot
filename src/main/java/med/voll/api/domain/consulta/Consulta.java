@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import med.voll.api.domain.medico.Especialidad;
 import med.voll.api.domain.medico.Medico;
 import med.voll.api.domain.paciente.Paciente;
 
@@ -45,6 +46,14 @@ public class Consulta {
         this.paciente = paciente;
         this.medico = medico;
         this.fecha = fecha;
+    }
+
+    public Consulta(Long id, Medico medico, Paciente paciente, LocalDateTime fecha, MotivoCancelamiento motivoCancelamiento) {
+        this.id = id;
+        this.paciente = paciente;
+        this.medico = medico;
+        this.fecha = fecha;
+        this.motivoCancelamiento = motivoCancelamiento;
     }
 
     public Consulta(Medico medico, Paciente paciente, LocalDateTime fecha) {
