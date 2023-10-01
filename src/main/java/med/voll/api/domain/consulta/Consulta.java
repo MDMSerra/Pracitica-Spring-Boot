@@ -25,8 +25,10 @@ public class Consulta {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "medico_id")
     private Medico medico;
-
     private LocalDateTime fecha;
+    @Column(name = "motivo_cancelamiento")
+    @Enumerated(EnumType.STRING)
+    private MotivoCancelamiento motivoCancelamiento;
 
     public Consulta() {
     }
@@ -45,6 +47,16 @@ public class Consulta {
         this.fecha = fecha;
     }
 
+    public Consulta(Medico medico, Paciente paciente, LocalDateTime fecha) {
+        this.paciente = paciente;
+        this.medico = medico;
+        this.fecha = fecha;
+    }
+
+    public void cancelar(MotivoCancelamiento motivo) {
+        this.motivoCancelamiento = motivo;
+    }
+
     public Long getId() {
         return id;
     }
@@ -59,5 +71,9 @@ public class Consulta {
 
     public LocalDateTime getFecha() {
         return fecha;
+    }
+
+    public MotivoCancelamiento getMotivoCancelamiento() {
+        return motivoCancelamiento;
     }
 }

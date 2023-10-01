@@ -1,5 +1,6 @@
 package med.voll.api.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import med.voll.api.domain.medico.*;
 import med.voll.api.domain.direccion.DatosDireccion;
@@ -16,6 +17,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/medicos")
+@SecurityRequirement(name = "bearer-key")
 public class MedicoController {
     @Autowired // se usa para usar el objeto ya creado, se le pide a spring que se lo inyecte asi no se necesite instanciar uno.
     // PERO dara problemas en las pruebas unitarias, no se recomienda en la practica, solo se usa para medios didacticos
